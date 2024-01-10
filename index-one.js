@@ -1,3 +1,5 @@
+// переназначение undefined
+
 // let undefined = 1;
 
 // console.log(undefined);
@@ -7,6 +9,7 @@
 // console.log(two === undefined);
 // console.log(two);
 
+// примитивное сравнение объектов с неограниченной вложенностью
 const similer = (a, b) => {
   for (key in a) {
     if (a[key] !== b[key]) {
@@ -29,6 +32,7 @@ const objA = {
   },
 };
 
+// потеря контекста в стрелочной функции
 global.objB = {
   name: "one",
   surname: "two",
