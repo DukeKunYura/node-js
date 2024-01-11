@@ -37,4 +37,22 @@ const mapItemsTwo = new Map([
 console.log(mapItemsTwo);
 
 // цвета в консоли
-console.log("\x1b[1;33m" + 5555 + "\t" + "\x1b[1;35m" + 1 + "\x1b[1;37m");
+// console.log("\x1b[1;33m" + 5555 + "\t" + "\x1b[1;35m" + 1 + "\x1b[1;37m");
+
+// замыкание
+const generatePass = (symbols) => {
+  const max = symbols.length;
+  return (length) => {
+    let pass = "";
+    for (let i = 0; i < length; i++) {
+      const index = Math.floor(Math.random() * max);
+      pass = pass + symbols[index];
+    }
+    return pass;
+  };
+};
+
+const symbols = "qwertyuiopasdfghjklzxcvbnm1234567890";
+const generatePassFromQwerty12 = generatePass(symbols);
+const pass = generatePassFromQwerty12(6);
+console.log(pass);
