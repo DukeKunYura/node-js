@@ -1,9 +1,7 @@
-const { sum } = require("./index-five.js");
-const os = require("os");
+const dotenv = require("dotenv");
+dotenv.config();
 
-console.log(sum(5, 8));
-console.log(os.platform());
-console.log(os.release());
-console.log(os.type());
-console.log(os.arch());
-console.log(os.hostname());
+const { sum } = require("./lessons/index-five.js");
+const { send } = require("./events.js");
+
+send();
